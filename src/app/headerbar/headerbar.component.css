@@ -1,0 +1,40 @@
+#navbar{
+    background-color: black;
+}
+
+#logo{
+    margin-top:7px;
+}
+
+#headerbuttons{
+    margin-top: 13px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+#headerbuttons a{
+    font-size:1.2em;
+    color:white;
+}
+
+#row-3{
+    text-align: right;
+}
+
+#row-2 a{
+    font-size:1.4em;
+    color:white;
+}
+
+#row-3 a{
+    font-size:1.4em;
+    color:white;
+}
+
+#searchbar{
+    margin-left: 1%;
+}
+
+@media screen {
+    
+}
