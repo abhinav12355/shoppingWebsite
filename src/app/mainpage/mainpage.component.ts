@@ -5,6 +5,8 @@ import { HttpClient } from "@angular/common/http"
 import { item } from "../models/item"
 import { items } from "../constants/item-constants"
 import { ItemService } from "../item.service"
+import { CartComponent } from "../cart/cart.component"
+import {CarouselModule} from 'primeng/carousel';
 
 @Component({
   selector: 'app-mainpage',
@@ -15,20 +17,35 @@ import { ItemService } from "../item.service"
 
 export class MainpageComponent implements OnInit {
 
-  constructor() {
+  constructor(private itemsService: ItemService) {
 
   }
-
+  public sports;
+  public men;
+  public women;
+  public electronics;
+  public mobile;
+  @Input() childItem;
+  @Output() selectedItemId = new EventEmitter();
+  public items;
   ngOnInit() {
-    
+   this.items = this.itemsService.getItems();
+  //  
+    console.log(`The item parent service obj is : ${items[5].name}`)
   }
-  public items:item[]=[
-    new item("Iphone 7",50000,"electronics",1,"Apple","hi"),
-    new item("Iphone 7",50000,"electronics",1,"Apple","hi"),
-    new item("Iphone 7",50000,"electronics",1,"Apple","hi"),
-    new item("Iphone 7",50000,"electronics",1,"Apple","hi"),
-    new item("Iphone 7",50000,"electronics",1,"Apple","hi"),
-    new item("Iphone 7",50000,"electronics",1,"Apple","hi"),
-]
+
+public ID;
+public itemid(id)
+{
+  this.ID=id;
+console.log("parent check ID is"+id);
+sessionStorage.setItem('selectedId', id)
+}
+
+public itemidr()
+{
+  console.log("Id in itemidr"+this.ID);
+  return this.ID;
+}
 }
 

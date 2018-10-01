@@ -1,3 +1,392 @@
-<p>
-  electronics works!
-</p>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+    <h3 class="head">Apply filters</h3>
+    
+         <div class="sub">
+            <a (click)="jeans()">Home Theater</a>
+         </div>
+         <hr>
+         <div class="sub">
+                 <a (click)="shirt()">Split-ac</a>
+             </div>
+    <hr>
+    <div class="sub">
+         <a   (click)="tshirt()"> refrigerator </a>
+     </div>
+      
+      <hr>
+      
+      <div class="sub">
+           <a   (click)="plazo()"> window-ac </a>
+       </div>
+       <hr>
+       <div class="sub">
+            <a   (click)="lehnga()"> washing-machine </a>
+        </div>
+        <hr>
+        <hr>
+        <div class="sub">
+             <a   (click)="shrug()"> rommcooler </a>
+         </div>
+      <h3 class="head">Price-Range</h3>
+      <div class="sub">
+             <a (click)="m1()">  <span class="fa fa-money s">&nbsp;&nbsp;</span>200-1000</a>
+         </div>
+          <hr>
+          <div class="sub">
+                 <a (click)="m2">  <span class="fa fa-money s">&nbsp;&nbsp;</span>1001-2000</a>
+              </div>
+               <hr>
+               <div class="sub">
+                     <a (click)="m3()"> <span class="fa fa-money s">&nbsp;&nbsp;</span>2001-3000</a>
+                  </div>
+                   <hr>
+                   <div class="sub">
+                         <a (click)="m4()">     <span class="fa fa-money s">&nbsp;&nbsp;</span>3001-4000</a>
+                      </div>
+                       <hr>
+</div>
+<app-carouselelectronics></app-carouselelectronics>
+<div class="container fil">
+    <div class="row">
+        <div class="col-sm-3">
+            <span class="glyphicon glyphicon-bullhorn">&nbsp;&nbsp;</span>
+            <span class="rout">Home Electronic Carnival</span>
+        </div>
+        <div class="col-sm-1 col-sm-offset-2"></div>
+
+        <div class="col-sm-2 text-right">
+            <span style="cursor:pointer" (click)="openNav()">&#9776; Add filter</span>
+        </div>
+        <div class="col-sm-2  text-center">
+
+            Price:
+            <span class="glyphicon glyphicon-arrow-up"></span>
+            <a (click)="descend()"> High-low</a>
+        </div>
+        <div class="col-sm-2 text-left">
+            <span class="glyphicon glyphicon-arrow-down"></span>
+            <a (click)="ascend()"> low-High</a>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div *ngIf="simple">
+        <div class="row">
+            <div *ngFor="let item of items">
+                <div *ngIf="item.category == 'Electronics'">
+                    <div class="col-md-3 col-sm-4 col-xs-6">
+    
+                        <div class="card" (click)="itemid(item.id)">
+                            <a routerLink="../desc" (click)="itemid(item.id)">
+                                <img src="{{item.imag}}" alt="Avatar">
+                            </a>
+                            <h4>
+                                <b>{{item.name}}</b>
+                            </h4>
+                            <p>Best Buy:</p>
+                            <p>₹ {{item.price}}</p>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    <div *ngIf="asc">
+        <div class="row">
+            <div *ngFor="let item of items | orderBy : ['price'] :false">
+                <div *ngIf="item.category == 'Electronics'">
+                    <div class="col-md-3 col-sm-4 col-xs-6">
+    
+                        <div class="card" (click)="itemid(item.id)">
+                            <a routerLink="../desc" (click)="itemid(item.id)">
+                                <img src="{{item.imag}}" alt="Avatar">
+                            </a>
+                            <h4>
+                                <b>{{item.name}}</b>
+                            </h4>
+                            <p>Best Buy:</p>
+                            <p>₹ {{item.price}}</p>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    
+    <div *ngIf="dsc">
+       
+        <div class="row">
+            <div *ngFor="let item of items |  orderBy : ['price'] :true">
+                <div *ngIf="item.category == 'Electronics'">
+                    <div class="col-md-3 col-sm-4 col-xs-6">
+    
+                        <div class="card" (click)="itemid(item.id)">
+                            <a routerLink="../desc" (click)="itemid(item.id)">
+                                <img src="{{item.imag}}" alt="Avatar">
+                            </a>
+                            <h4>
+                                <b>{{item.name}}</b>
+                            </h4>
+                            <p>Best Buy:</p>
+                            <p>₹ {{item.price}}</p>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    
+    <div *ngIf="je">
+            
+             <div class="row">
+                 <div *ngFor="let item of items">
+                     <div *ngIf="item.category == 'Electronics' && item.name == 'hometheater' ">
+                         <div class="col-md-3 col-sm-4 col-xs-6">
+         
+                             <div class="card" (click)="itemid(item.id)">
+                                 <a routerLink="../desc" (click)="itemid(item.id)">
+                                     <img src="{{item.imag}}" alt="Avatar">
+                                 </a>
+                                 <h4>
+                                     <b>{{item.name}}</b>
+                                 </h4>
+                                 <p>Best Buy:</p>
+                                 <p>₹ {{item.price}}</p>
+         
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+         
+             </div>
+         </div>
+    
+         <div *ngIf="sh">
+                
+                 <div class="row">
+                     <div *ngFor="let item of items">
+                         <div *ngIf="item.category == 'Electronics' && item.name == 'split-ac' ">
+                             <div class="col-md-3 col-sm-4 col-xs-6">
+             
+                                 <div class="card" (click)="itemid(item.id)">
+                                     <a routerLink="../desc" (click)="itemid(item.id)">
+                                         <img src="{{item.imag}}" alt="Avatar">
+                                     </a>
+                                     <h4>
+                                         <b>{{item.name}}</b>
+                                     </h4>
+                                     <p>Best Buy:</p>
+                                     <p>₹ {{item.price}}</p>
+             
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+             
+                 </div>
+             </div>
+             <div *ngIf="ts">
+                    
+                     <div class="row">
+                         <div *ngFor="let item of items">
+                             <div *ngIf="item.category == 'Electronics' && item.name == 'refrigerator' ">
+                                 <div class="col-md-3 col-sm-4 col-xs-6">
+                 
+                                     <div class="card" (click)="itemid(item.id)">
+                                         <a routerLink="../desc" (click)="itemid(item.id)">
+                                             <img src="{{item.imag}}" alt="Avatar">
+                                         </a>
+                                         <h4>
+                                             <b>{{item.name}}</b>
+                                         </h4>
+                                         <p>Best Buy:</p>
+                                         <p>₹ {{item.price}}</p>
+                 
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                 
+                     </div>
+                 </div>
+                 <div *ngIf="s">
+                        
+                         <div class="row">
+                             <div *ngFor="let item of items">
+                                 <div *ngIf="item.category == 'Electronics' && item.name == 'window-ac' ">
+                                     <div class="col-md-3 col-sm-4 col-xs-6">
+                     
+                                         <div class="card" (click)="itemid(item.id)">
+                                             <a routerLink="../desc" (click)="itemid(item.id)">
+                                                 <img src="{{item.imag}}" alt="Avatar">
+                                             </a>
+                                             <h4>
+                                                 <b>{{item.name}}</b>
+                                             </h4>
+                                             <p>Best Buy:</p>
+                                             <p>₹ {{item.price}}</p>
+                     
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                     
+                         </div>
+                     </div>
+                     <div *ngIf="le">
+                            
+                             <div class="row">
+                                 <div *ngFor="let item of items">
+                                     <div *ngIf="item.category == 'Electronics' && item.name == 'washingmachine' ">
+                                         <div class="col-md-3 col-sm-4 col-xs-6">
+                         
+                                             <div class="card" (click)="itemid(item.id)">
+                                                 <a routerLink="../desc" (click)="itemid(item.id)">
+                                                     <img src="{{item.imag}}" alt="Avatar">
+                                                 </a>
+                                                 <h4>
+                                                     <b>{{item.name}}</b>
+                                                 </h4>
+                                                 <p>Best Buy:</p>
+                                                 <p>₹ {{item.price}}</p>
+                         
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                         
+                             </div>
+                         </div>
+                         <div *ngIf="pl">
+                                
+                                 <div class="row">
+                                     <div *ngFor="let item of items">
+                                         <div *ngIf="item.category == 'Electronics' && item.name == 'roomcooler' ">
+                                             <div class="col-md-3 col-sm-4 col-xs-6">
+                             
+                                                 <div class="card" (click)="itemid(item.id)">
+                                                     <a routerLink="../desc" (click)="itemid(item.id)">
+                                                         <img src="{{item.imag}}" alt="Avatar">
+                                                     </a>
+                                                     <h4>
+                                                         <b>{{item.name}}</b>
+                                                     </h4>
+                                                     <p>Best Buy:</p>
+                                                     <p>₹ {{item.price}}</p>
+                             
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                             
+                                 </div>
+                             </div>
+                        
+                    
+                 <div *ngIf="m11">
+                        
+                         <div class="row">
+                             <div *ngFor="let item of items|orderBy : ['price'] :false">
+                                 <div *ngIf="item.category == 'Electronics' && item.price>=200 && item.price<=1000 ">
+                                     <div class="col-md-3 col-sm-4 col-xs-6">
+                     
+                                         <div class="card" (click)="itemid(item.id)">
+                                             <a routerLink="../desc" (click)="itemid(item.id)">
+                                                 <img src="{{item.imag}}" alt="Avatar">
+                                             </a>
+                                             <h4>
+                                                 <b>{{item.name}}</b>
+                                             </h4>
+                                             <p>Best Buy:</p>
+                                             <p>₹ {{item.price}}</p>
+                     
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                     
+                         </div>
+                     </div>
+                     <div *ngIf="m22">
+                            
+                             <div class="row">
+                                 <div *ngFor="let item of items|orderBy : ['price'] :false">
+                                     <div *ngIf="item.category == 'Electronics' && item.price>=1001 && item.price<=2000 ">
+                                         <div class="col-md-3 col-sm-4 col-xs-6">
+                         
+                                             <div class="card" (click)="itemid(item.id)">
+                                                 <a routerLink="../desc" (click)="itemid(item.id)">
+                                                     <img src="{{item.imag}}" alt="Avatar">
+                                                 </a>
+                                                 <h4>
+                                                     <b>{{item.name}}</b>
+                                                 </h4>
+                                                 <p>Best Buy:</p>
+                                                 <p>₹ {{item.price}}</p>
+                         
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                         
+                             </div>
+                         </div>
+                         <div *ngIf="m33">
+                                
+                                 <div class="row">
+                                     <div *ngFor="let item of items|orderBy : ['price'] :false">
+                                         <div *ngIf="item.category == 'Electronics' && item.price>=2001 && item.price<=3000 ">
+                                             <div class="col-md-3 col-sm-4 col-xs-6">
+                             
+                                                 <div class="card" (click)="itemid(item.id)">
+                                                     <a routerLink="../desc" (click)="itemid(item.id)">
+                                                         <img src="{{item.imag}}" alt="Avatar">
+                                                     </a>
+                                                     <h4>
+                                                         <b>{{item.name}}</b>
+                                                     </h4>
+                                                     <p>Best Buy:</p>
+                                                     <p>₹ {{item.price}}</p>
+                             
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                             
+                                 </div>
+                             </div>
+    
+                             <div *ngIf="m44">
+                                    
+                                     <div class="row">
+                                         <div *ngFor="let item of items|orderBy : ['price'] :false">
+                                             <div *ngIf="item.category == 'Electronics' && item.price>=3000 ">
+                                                 <div class="col-md-3 col-sm-4 col-xs-6">
+                                 
+                                                     <div class="card" (click)="itemid(item.id)">
+                                                         <a routerLink="../desc" (click)="itemid(item.id)">
+                                                             <img src="{{item.imag}}" alt="Avatar">
+                                                         </a>
+                                                         <h4>
+                                                             <b>{{item.name}}</b>
+                                                         </h4>
+                                                         <p>Best Buy:</p>
+                                                         <p>₹ {{item.price}}</p>
+                                 
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                 
+                                     </div>
+                                 </div>

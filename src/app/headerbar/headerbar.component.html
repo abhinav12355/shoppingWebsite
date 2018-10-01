@@ -1,6 +1,6 @@
 <div id="navbar">
-  <div class="row">
-    <div class="col-md-4 col-sm-11 col-xs-11">
+  <div class="row" id="headnav">
+    <div class="col-md-4">
       <a routerLink='home'>
         <img src="assets/img/logo2.png" width="375" id="logo">
       </a>
@@ -17,52 +17,151 @@
         </div>
       </form>
     </div>
-    <div class="col-md-2 col-sm-5 col-xs-5" id="headerbuttons">
-      <a href="#">
-        <span class="glyphicon glyphicon-user"> </span>Sign Up</a>
-      <a href="#">
-        <span class="glyphicon glyphicon-log-in"></span> Login</a>
+    <div class="col-md-2 col-sm-5 col-xs-5"  >
+      <div id="logbar">
+        <button *ngIf="!loggedIn()" type="button" class="btn" (click)="openModal(template)" id="buttonheader">Signup Now!!</button>
+        <button *ngIf="!loggedIn()" type="button" class="btn" (click)="openModal(template1)" id="buttonheader">Login</button>
+        <button *ngIf="loggedIn()" type="button" class="btn" (click)="logout()" id="buttonheader">Logout</button>
+      </div>
     </div>
+
+    <ng-template #template>
+      <div class="modal-header">
+        <h4 class="modal-title text-center">Signup Now</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #signForm="ngForm" (ngSubmit)="signUpForm(signForm)" name="user">
+          <div *ngIf="empty" class="err">
+            <span class="red">*</span> Field must not be empty
+          </div>
+          <div *ngIf="eval" class="err">
+            <span class="red">*</span> email syntax is not correct.
+          </div>
+          <div *ngIf="prob" class="err">
+            <span class="red">*</span>Server error please try later.
+          </div>
+          <div *ngIf="succ" class="succ">
+            <span class="red">*</span> Registration successfull.
+          </div>
+          <div class="form-group-sm">
+            <label for="signUpName">First Name &nbsp;: </label>
+            <input type="text" [(ngModel)]="fname" name="fname" class="form-control" appForbiddenName="bob">
+
+            <label for="signUpName">Last Name &nbsp;: </label>
+            <input type="text" [(ngModel)]="lname" name="lname" class="form-control">
+
+          </div>
+          <div class="form-group">
+            <label for="signUpEmail">EMAIL &nbsp;: </label>
+            <input type="email" name="email" class="form-control" [(ngModel)]="email">
+          </div>
+          <div class="form-group">
+            <label for="signUpPassword">PASSWORD &nbsp;: </label>
+            <input type="password" name="password" class="form-control" [(ngModel)]="password">
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary" value="Submit">Signup</button>
+            <span class="or">OR</span>
+            <button type="button" class="btn btn-primary" (click)="modalRef.hide()" (click)="openModal(template1)">Login</button>
+          </div>
+        </form>
+      </div>
+      <div *ngIf="val2">
+        <p-progressSpinner></p-progressSpinner>
+      </div>
+
+    </ng-template>
+    <ng-template #template1>
+      <div class="modal-header">
+        <h4 class="modal-title text-center">Login</h4>
+
+        <button type="button" class="close pull-right" aria-label="Close" id="cl" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #loginForm="ngForm" (ngSubmit)="LoginForm(loginForm)">
+
+
+
+          <div *ngIf="empty1" class="err">
+            <span class="red">*</span> Field must not be empty
+          </div>
+          <div *ngIf="eval1" class="err">
+            <span class="red">*</span> email syntax is not correct.
+          </div>
+          <div *ngIf="prob1" class="err">
+            <span class="red">*</span>Wrong password or user name please try again.
+          </div>
+          <div *ngIf="succ1" class="succ">
+            <span class="red">*</span> Login successfull.
+          </div>
+          <div class="form-group">
+            <label for="signUpEmail">EMAIL &nbsp;: </label>
+            <input type="email" [(ngModel)]="email" name="email" class="form-control" ngModel>
+          </div>
+          <div class="form-group">
+            <label for="signUpPassword">PASSWORD &nbsp;: </label>
+            <input type="password" [(ngModel)]="password" name="password" class="form-control" ngModel>
+          </div>
+
+
+          <button type="submit" class="btn btn-primary">Login</button>
+
+
+        </form>
+      </div>
+    </ng-template>
   </div>
 
-
-  <div class="row">
-    <div class="col-md-10 col-sm-12 col-xs-12" id="row-2">
-      <div class="col-md-2 col-sm-4 col-xs-4">
-        <a routerLink='electronics'>
-          Electronics
-        </a>
-      </div>
-      <div class="col-md-2 col-sm-4 col-xs-4">
-        <a routerLink='men'>
-          Men
-        </a>
-      </div>
-      <div class="col-md-2 col-sm-4 col-xs-4">
-        <a routerLink='women'>
-          Women
-        </a>
-      </div>
-      <div class="col-md-2 col-sm-4 col-xs-4">
-        <a routerLink='sports'>
-          Sports
-        </a>
-      </div>
-      <div class="col-md-2 col-sm-4 col-xs-4">
-        <a routerLink='books'>
-          Books
-        </a>
-      </div>
-      <div class="col-md-2 col-sm-4 col-xs-4">
-        <a routerLink='offers'>
-          Offers
-        </a>
-      </div>
+  <div class="row " id="row2">
+    <div class="col-sm-1">
+      <a routerLink='electronics'>
+        <span class="z2">Electronics</span>
+      </a>
     </div>
-    <div class="col-md-1 col-xs-11 col-sm-11" id="row-3">
+    <div class="col-sm-1">
+      <a routerLink='mobile'>
+        <span class="z">Mobile</span>
+      </a>
+    </div>
+    <div class="col-sm-1">
+      <a routerLink='men'>
+        <span class="z">Men</span>
+      </a>
+    </div>
+    <div class="col-sm-1">
+      <a routerLink='women'>
+        <span class="z">Women</span>
+      </a>
+    </div>
+
+    <div class="col-sm-1">
+      <a routerLink='sports'>
+        <span class="z">Sports</span>
+      </a>
+    </div>
+    <div class="col-sm-1" *ngIf="loggedIn()">
       <a routerLink='cart'>
-        <span class="glyphicon glyphicon-shopping-cart"></span>Cart
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+        <span class="z">Cart</span>
+      </a>
+    </div>
+    <div class="col-sm-1" *ngIf="loggedIn()">
+      <a routerLink='cart'>
+        <span class="glyphicon glyphicon-user "></span>
+        <span class="z">Profile</span>
+      </a>
+    </div>
+    <div class="col-sm-1">
+      <a routerLink='sell'>
+        <span class="z">Sell</span>
       </a>
     </div>
   </div>
 </div>
+<!--signupmodal-->

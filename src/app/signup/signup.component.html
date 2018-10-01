@@ -1,0 +1,69 @@
+<div class="modal" id="signUpModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">SIGN IN</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="col-sm-6">
+
+            <div class="form-group">
+              <label for="signUpName">NAME &nbsp;: </label>
+              <input type="text" name="signUpName" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="signUpEmail">EMAIL &nbsp;: </label>
+              <input type="email" name="signUpEmail" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="signUpPassword">PASSWORD &nbsp;: </label>
+              <input type="password" name="signUpPassword" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>
+                <b>GENDER &nbsp;&nbsp;:&nbsp;</b>
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="male">MALE
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="female">FEMALE
+              </label>
+            </div>
+            <div class="form-group form-inline">
+              <label>AGE &nbsp;&nbsp;:&nbsp;&nbsp;
+                <input type="text" name="signUpAge" class="form-control">
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="signUpAddress">ADDRESS</label>
+              <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div>
+
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="signUpAccountNo">Account Number&nbsp;:</label>
+              <input type="text" name="signUpAccountNo" class="form-control">
+            </div>
+            <div class="form-group form-inline">
+              <label for="signUpAccountCvv">CVV&nbsp;:&nbsp;</label>
+              <input type="number" name="signUpAccountCvv" min="0" max="999" class="form-control">
+            </div>
+            <div class="form-group form-inline">
+              <label for="signUpExpiryDate">EXPIRY DATE&nbsp;:&nbsp;</label>
+              <input type="date" name="signUpExpiryDate" class="form-control">
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">SUBMIT</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

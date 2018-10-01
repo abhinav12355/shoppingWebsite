@@ -1,0 +1,141 @@
+.head
+{
+    background-color: #ff9f00;
+   width:150px;
+    border-radius: 4px;
+ 
+}
+.im{
+ padding :5%;
+ margin-top:12%;
+ margin-right:14%;
+ margin-left:7%;
+ margin-bottom:10%;
+}
+.head1
+{
+    background-color: rgb(251, 100, 27);
+    width:150px;
+    border-radius: 4px;
+    
+}
+.head-font
+{
+    text-align: center;
+    color:white;
+    font-size:16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
+}
+.head-font1
+{
+    
+    color:black;
+    font-size:24px;
+    font-family: Courier New, Courier, monospace;
+    padding:2px;
+}
+.a{
+    border:solid;
+    border-width: 0.9px;
+border-color:gainsboro;
+text-align:center;
+margin-bottom:10%;
+}
+.img1
+{
+
+border:solid;
+border-width: 0.9px;
+border-color: #4d4dff;
+
+}
+.chk
+{
+    border-radius:8px;
+    border:solid;
+}
+.img2
+{
+
+border:solid;
+border-width: 0.9px;
+border-color: gainsboro;
+
+
+}
+
+.he1{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 18px;
+
+}
+.he2{
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 18px;
+color:#4d4dff;
+
+}
+.discount
+{
+text-decoration:line-through;
+color:rgb(199, 199, 199);
+font-size: 16px;
+}
+.glyphicon{
+    color: #00b359;
+}
+.dis1
+{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, ; 
+}
+.textinfo
+{
+    color:rgb(162, 162, 162);
+    font-size: 18px;
+}
+form {
+  
+    background: white;
+    display: inline-block;
+  }
+  
+  form input {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid black;
+    outline: none;
+  }
+  
+  form button {
+    background: transparent;
+    border-bottom: 1px solid black;
+    color: #4d4dff;
+  }
+  .color1
+  {
+      background-color: black;
+      height:25px;
+      width: 25px;
+  }
+  .color2
+  {
+      background-color: silver;
+      height:25px;
+      width: 25px;
+  }
+  .color3
+  {
+      background-color: rgb(243, 225, 132);
+      height:25px;
+      width: 25px;
+  }
+  .service
+  {
+  color:#4d4dff;
+  }
+
+  .alert
+  {
+      color:red;
+  }

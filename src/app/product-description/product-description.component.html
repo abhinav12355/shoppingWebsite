@@ -1,0 +1,106 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="row">
+          <div class="col-sm-1 ">
+
+            <img src="{{item[Id].imag}}" height="50" width="50" class="img1">
+            <br>
+            <img src="{{item[Id].imag}}" height="50" width="50" class="img2">
+            <br>
+            <img src="{{item[Id].imag}}" height="50" width="50" class="img2">
+
+          </div>
+          <div class="col-sm-4 a">
+            <img src="{{item[Id].imag}}" height="400" width="400" class="im">
+            <br>
+            <div class="text-center">
+              <button type="button" class="head" (click)="cartvalidator()">
+                <p class="head-font">
+                  <span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</p>
+              </button>
+              <button type="button" class="head1" (click)="checkoutvalidator()">
+                <p class="head-font">Buy Now</p>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <h1 class="head-font1">
+              <span class="he1">{{item[Id].category}}</span>-
+              <span class="he2">{{item[Id].name}}</span>
+            </h1>
+            <h3 class="price">₹{{item[Id].price}}
+              <span class="discount">₹{{discount}} </span>
+              <sub>&nbsp;&nbsp;&nbsp;10% off</sub>
+            </h3>
+            <br>
+            <div class="quantity">
+              <span class="textinfo">&nbsp;Quantity:&nbsp;</span>
+              <button type="button" class="btn btn-danger" (click)="decquantity()">
+                <b>-</b>
+              </button> &nbsp;&nbsp;{{quantity}}&nbsp;&nbsp;
+              <button type="button"  class="btn btn-primary" (click)="incquantity()">
+                <b>+</b>
+              </button>
+              <span *ngIf="show" class="alert">*only {{quantity}} Items Available from this seller</span>
+            </div>
+            <h5 class="dis1">
+              <span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;Get extra 5% discount on HDFC Credit Card</h5>
+            <h5 class="dis1">
+              <span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;Get extra 7% discount on ICICI Credit Card</h5>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-1">
+                  <h3 class="textinfo">Delivery</h3>
+                </div>
+                <div class="col-sm-8">
+                  <br>
+                  <form>
+                    <input type="text" id="pincode" placeholder="Delivery Pincode here">
+                    <button type="submit" class="chk">CHECK</button><span *ngIf="r"></span><span *ngIf="cod">Cod Available</span>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-1">
+                  <h3 class="textinfo">Color</h3>
+                </div>
+                <div class="col-sm-8">
+                  <br>
+                  <div class="color1"></div>
+                  <div class="color2"></div>
+                  <div class="color3"></div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-1">
+                  <h3 class="textinfo">Services</h3>
+                </div>
+                <div class="col-sm-8">
+                  <br>
+                  <h5 class="service">
+                    <span class="	glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;30 days Return Policy</h5>
+                  <h5 class="service">
+                    <span class="glyphicon glyphicon-usd"></span>&nbsp;&nbsp;Cash On delivery Available</h5>
+
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

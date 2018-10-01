@@ -1,8 +1,49 @@
-#navbar{
-    background-color: black;
+.err
+{
+    background-color: rgb(244, 69, 69);
+    height:100%;
+    width:100%;
+    color:white;
+    border-radius: 8px;
+    padding:5px;
+    text-align: center;
+}
+.succ
+{
+    background-color: rgb(35, 174, 35);
+    height:100%;
+    width:100%;
+    color:white;  
+    border-radius: 8px;
+    padding:5px;
+    text-align: center;
+    
+}
+#headnav
+{
+    background-color: #337ab7;
 }
 
+#row2
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#buttonheader{
+    background-color:transparent; 
+    border:none; 
+    color:white; 
+    font-weight:bold;
+    font-size: 1.2em;
+}
 #logo{
+    margin-top:7px;
+}
+
+#logbar{
     margin-top:7px;
 }
 
@@ -37,4 +78,61 @@
 
 @media screen {
     
+}
+.dropbtn {
+    background-color: #4d4dff;
+    color: white;
+    padding: 16px;
+  
+    border: none;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    color:black;
+   
+    min-width: 700px;
+  
+    
+}
+
+.dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: inline;
+}
+
+.dropdown-content a:hover {background-color: white;
+color:black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    color:black;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #4d4dff;
+}
+.z
+{
+    color: #4d4dff;
+   height:100%;
+   width:100%;
+ 
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding :2px;
+    font-weight: bold;
+}
+.z2
+{
+    color:#4d4dff;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    height:100%;
+    width:100%;
+    font-weight: bold;
 }

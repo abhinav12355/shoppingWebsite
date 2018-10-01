@@ -1,3 +1,217 @@
-<p>
-  offers works!
-</p>
+<p-growl [value]="msgs">
+</p-growl>
+<br>
+<p-steps [model]="items" styleClass="steps-custom"></p-steps>
+
+<br>
+<br>
+<div class="container border">
+    <div class="col-sm-5 col-sm-offset-2">
+        <div *ngIf="ind1">
+            <form #sellForm="ngForm" (ngSubmit)="sellItemForm(sellForm)" name="user">
+                <div class="head">Expand your business with us ..</div>
+
+
+                <br>
+                <div class="form-group">
+                    <b> Choose Item Category:&nbsp;</b>
+                    <select name="category">
+                        <option value="electronics">Electronics</option>
+                        <option value="men">Men</option>
+                        <option value="women">Women</option>
+                        <option value="sports">Sports</option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label>Upload Image: front view</label>
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <span class="btn btn-default btn-file">
+                                Browse…
+                                <input type="file" name="image1" id="imgInp" ngModel>
+                            </span>
+                        </span>
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label>Upload Image: back view </label>
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <span class="btn btn-default btn-file">
+                                Browse…
+                                <input type="file" name="image2" id="imgInp2" ngModel>
+                            </span>
+                        </span>
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label>Upload Image: side view</label>
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <span class="btn btn-default btn-file">
+                                Browse…
+                                <input type="file" name="image3" id="imgInp3" ngModel>
+                            </span>
+                        </span>
+
+                    </div>
+
+
+                </div>
+                <div class="form-group-sm">
+                    <label for="signUpName">price &nbsp;: </label>
+                    <input type="number" name="price" class="form-control" required ngModel>
+
+                </div>
+                <div class="form-group-sm">
+                    <label for="signUpName">item description &nbsp;: </label>
+                    <input type="text" name="description" class="form-control" required ngModel>
+
+                </div>
+                <div class="form-group-sm">
+                    <label for="signUpName">quantity &nbsp;: </label>
+                    <input type="number" name="quantity" class="form-control" required ngModel>
+
+                </div>
+
+                <div class="btu">
+                    <br>
+
+                    <button type="submit" class="btn btn-primary">Sell Your product </button>
+                    <br>
+                </div>
+                <br>
+            </form>
+        </div>
+        <div class="inside" *ngIf="ind0">
+            <form #seller="ngForm" (ngSubmit)="selleraccountcreation(seller)" name="user">
+                <div class="head">Start your business with us ..</div>
+                <br>
+                <div class="form-group-sm">
+                    <label for="signUpName">Your Name &nbsp;: </label>
+                    <input type="text" name="name" class="form-control" required ngModel>
+
+                </div>
+                <br>
+                <div class="form-group-sm">
+                    <label for="signUpName">Email &nbsp;: </label>
+                    <input type="email" name="email" class="form-control" required ngModel>
+
+                </div>
+
+                <div class="form-group-sm">
+                    <label for="signUpName">Password &nbsp;: </label>
+                    <input type="password" name="password" class="form-control" required ngModel>
+
+                </div>
+                <div class="form-group-sm">
+                    <label for="signUpName">Confirm your password &nbsp;: </label>
+                    <input type="password" name="cpassword" class="form-control" required ngModel>
+
+                </div>
+                <div class="form-group-sm">
+                    <label for="signUpName">Company Name &nbsp;: </label>
+                    <input type="text" name="cname" class="form-control" required ngModel>
+
+                </div>
+
+                <div class="btu">
+                    <br>
+
+                    <button type="submit" class="btn btn-primary">Create your business </button>
+                    <button type="button" class="btn btn-primary" (click)="change()"> Login</button>
+                    <br>
+                </div>
+                <br>
+            </form>
+        </div>
+        <div *ngIf="ind5">
+            <form #sellerlogin="ngForm" (ngSubmit)="sellerlogin(sellerlogin)" name="user">
+
+                <div class="head">Check the number of sale </div>
+
+                <br>
+                <div class="form-group-sm">
+                    <label for="signUpName">Email &nbsp;: </label>
+                    <input type="email" name="email" class="form-control" required ngModel>
+
+                </div>
+
+                <div class="form-group-sm">
+                    <label for="signUpName">Password &nbsp;: </label>
+                    <input type="password" name="password" class="form-control" required ngModel>
+
+                </div>
+
+
+
+                <div class="btu">
+                    <br>
+
+
+                    <button type="submit" class="btn btn-primary"> Login</button>
+                    <button type="button" class="btn btn-primary" (click)="change1()">Signup </button>
+                    <br>
+                </div>
+                <br>
+            </form>
+        </div>
+        <div *ngIf="ind2">
+            <form #payment="ngForm" (ngSubmit)="paymentDetails(payment)" name="user">
+
+                <div class="head">Share your paypal account details to recieve money ..</div>
+
+                <br>
+                <div class="form-group-sm">
+                    <label for="account">Merchant key &nbsp;: </label>
+                    <input type="number" name="pkey" class="form-control" required ngModel>
+
+                </div>
+
+                <div class="form-group-sm">
+                    <label for="name"> Account Holder Name &nbsp;: </label>
+                    <input type="text" name="pname" class="form-control" required ngModel>
+
+                </div>
+                <div class="form-group-sm">
+                    <label for="name"> Paypal Email &nbsp;: </label>
+                    <input type="email" name="pemail" class="form-control" required ngModel>
+
+                </div>
+
+                <div class="terms">
+                    <h5>
+                        <span class="red">*</span>your details are totally secured with shopinfinity </h5>
+                </div>
+
+                <div class="btu">
+                    <br>
+
+
+                    <button type="submit" class="btn btn-primary"> Login</button>
+                    <button type="button" class="btn btn-primary" (click)="change1()">Signup </button>
+                    <br>
+                </div>
+                <br>
+            </form>
+        </div>
+        <div *ngIf="ind3">
+            <form #view="ngForm" (ngSubmit)="dashboard(view)" name="user">
+
+                <div class="head">your dashboard</div>
+
+
+
+
+            </form>
+        </div>
+
+
+
+    </div>
+    <br>

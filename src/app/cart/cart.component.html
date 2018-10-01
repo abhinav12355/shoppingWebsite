@@ -1,3 +1,63 @@
-<p>
-  cart works!
-</p>
+<div class="cart">
+
+    <br>
+    <br>
+    <div class="row c">
+        <div class="col-md-2 col-sm-2 col-xs-2 text center">
+            <b>Image</b>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2 text center">
+            <b>Item</b>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2 text center">
+            <b>quantity</b>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2 text center">
+            <b>Price</b>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2 text center">
+            <b>Details</b>
+        </div>
+
+    </div>
+    <hr />
+    <div class="row card" *ngFor="let item of output">
+
+        <div class="in">
+            <div class="col-md-2 col-sm-2 col-xs-2">
+
+                <img src="{{item.imagepath}}" alt="Avatar" height="5" width="5">
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2 item">
+
+                <h5>
+                    {{item.itemname}}
+                </h5>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2 item">
+                <span>{{item.quantity}}</span>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2 item">
+                <span>{{item.description}}</span>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2 item">
+                <span>₹ {{item.price}}</span>
+
+            </div>
+
+            <div class="col-md-2 col-sm-2 col-xs-2 item">
+                <a href="#" data-toggle="tooltip" title="proceed checkout for buy this product">
+                   <a routerLink="../checkout"> <button type="submit" class="btn btn-primary">checkout</button></a>
+                </a>
+            </div>
+            <div class="option">
+                <span class="glyphicon glyphicon-remove-circle colo" (click)="deleteitem(item.itemid)">Delete</span>
+              
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

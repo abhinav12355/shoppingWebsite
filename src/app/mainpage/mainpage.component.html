@@ -1,13 +1,130 @@
 <app-carousel1></app-carousel1>
+<div class="head">
+    <a routerLink="../mobile">
+        <p class="head-font">Trending on Mobile Section</p>
+    </a>
+</div>
+
 <div class="row">
-    
+
     <div class="col-md-3 col-sm-4 col-xs-6" *ngFor="let item of items">
-        <div class="card">
-            <img src="assets/img/card/card.jpg" alt="Avatar">
-            <h4>
-                <b>{{item.name}}</b>
-            </h4>
-            <p>{{item.category}}</p>
+        <div *ngIf="item.category == 'Mobile' && item.id<5 ">
+            <div class="card" (click)="itemid(item.id)">
+                <a routerLink="../desc" (click)="itemid(item.id)">
+                    <img src="{{item.imag}}" alt="Avatar">
+                </a>
+                <h4>
+                    <b>{{item.name}}</b>
+                </h4>
+                <p>Best Buy:</p>
+                <p>₹ {{item.price}}</p>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="head">
+    <a routerLink="../men">
+        <p class="head-font">Trending on Men Section</p>
+    </a>
+</div>
+
+<div class="row">
+
+    <div class="col-md-3 col-sm-4 col-xs-6" *ngFor="let item of items">
+        <div *ngIf="item.category == 'Men' && item.id>24 && item.id<29 ">
+            <a routerLink="../desc">
+                <div class="card" (click)="itemid(item.id)">
+                    <img src="{{item.imag}}" alt="Avatar">
+                    <h4>
+                        <b>{{item.name}}</b>
+                    </h4>
+                    <p>₹ {{item.price}}</p>
+
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<div class="head">
+    <a routerLink="../women">
+        <p class="head-font">Trending on Women Section</p>
+    </a>
+</div>
+
+<div class="row">
+    <div *ngFor="let item of items">
+        <div *ngIf="item.category == 'Women' && item.id>32 && item.id<37 ">
+            <div class="col-md-3 col-sm-4 col-xs-6">
+
+                <a routerLink="../desc">
+                    <div class="card" (click)="itemid(item.id)">
+                        <img src="{{item.imag}}" alt="Avatar">
+                        <h4>
+                            <b>{{item.name}}</b>
+                        </h4>
+                        <p>₹ {{item.price}}</p>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="head">
+    <a routerLink="../sports">
+        <p class="head-font">Trending on Sports Section</p>
+    </a>
+</div>
+
+<div class="row">
+    <div *ngFor="let item of items">
+        <div *ngIf="item.category == 'Sports' && item.id>55 && item.id<60 ">
+            <div class="col-md-3 col-sm-4 col-xs-6">
+
+                <a routerLink="../desc">
+                    <div class="card" (click)="itemid(item.id)">
+                        <img src="{{item.imag}}" alt="Avatar">
+                        <h4>
+                            <b>{{item.name}}</b>
+                        </h4>
+                        <p>₹ {{item.price}}</p>
+
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </div>
+
+<div class="head">
+    <a routerLink="../electronics">
+        <p class="head-font">Trending on Electronics SECTION</p>
+    </a>
+</div>
+
+<div class="row">
+    <div *ngFor="let item of items">
+        <div *ngIf="item.category == 'Electronics' && item.id>72 && item.id<77 ">
+            <div class="col-md-3 col-sm-4 col-xs-6">
+
+                <a routerLink="../desc">
+                    <div class="card" (click)="itemid(item.id)">
+                        <img src="{{item.imag}}" alt="Avatar">
+                        <h4>
+                            <b>{{item.name}}</b>
+                        </h4>
+                        <p>₹ {{item.price}}</p>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
